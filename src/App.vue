@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <FishingModal
+      title="Удочка (1 уровень)"
+      title-color="#02CE0A"
+      description="Снасть в виде гибкого хлыста, изготовляемого ранее из дерева (сейчас и из других материалов)"
+      :image="require('@/assets/fishing-modal/img/fishing-rods/2.png')"
+      :price="90000"
+      :weight="1.5"
+    />
+    <FishingModal
+        title="Удочка (2 уровень)"
+        title-color="#0A9CFB"
+        description="Снасть в виде гибкого хлыста, изготовляемого ранее из дерева (сейчас и из других материалов)"
+        :image="require('@/assets/fishing-modal/img/fishing-rods/1.png')"
+        :price="90000"
+        :weight="1.5"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FishingModal from "@/components/fishing-modal/FishingModal";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    FishingModal,
   }
 }
 </script>
 
 <style lang="scss">
+@import "./assets/fishing-modal/fonts/roboto/stylesheet.css";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .25vw;
+
+  width: 100%;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Roboto';
 }
 </style>
